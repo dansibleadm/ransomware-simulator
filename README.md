@@ -70,13 +70,13 @@ In journal you can find “source_files” (files before encryption, also it can
 ```json
 {
     "dirs": [
-		    "tmp",
+    	"tmp",
         "/home"
     ], 
     "files": [
         "test_1.txt",
-				"test_2.txt",
-				"test_3.txt",
+	"test_2.txt",
+	"test_3.txt",
     ]
 }
 ```
