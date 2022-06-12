@@ -1,0 +1,11 @@
+{
+	"dirs": [
+		"tmp",
+		"/home"	
+	],
+	"files": [
+		"test_1.txt",
+		"test_2.txt",
+		"test_3.txt"
+	]
+}
