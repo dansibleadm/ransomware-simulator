@@ -33,7 +33,7 @@ docker run -ti inquisitor /bin/sh
 Run help command:
 
 ```bash
-python3 [app.py](http://app.py) -h
+python3 app.py -h
 ```
 
 - Available options
