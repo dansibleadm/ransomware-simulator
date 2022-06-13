@@ -23,8 +23,8 @@ if __name__ == "__main__":
                         help='Specify the log level (default: DEBUG).',
                         default='DEBUG')
     parser.add_argument("-e", "--ransomware_extension", dest="rwExt",
-                        help='Specify ransomware extension (default: ".crypto").',
-                        default='.crypto')
+                        help='Specify ransomware extension (default: ".inquisitor").',
+                        default='.inquisitor')
     parser.add_argument("-d", "--decrypt", dest="decrypt",
                         action="store_true",
                         help='Specify only decrypt mode for crypto engine (default: False).',
