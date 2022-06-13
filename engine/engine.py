@@ -50,6 +50,8 @@ class Engine(BaseEngine):
             for f in files:
                 file = File(filename=f, path_to_file=os.path.join(root, f))
                 file.calc_checksum()
+                if file.filename.endswith(self.crypto.extension):
+                    file.is_encrypted = True
                 source_files.append(file)
 
         for f in source_files:
@@ -67,11 +69,9 @@ class Engine(BaseEngine):
                     bf.calc_checksum()
                     encrypted_files.append(bf)
                     self.journal.save_into_journal(bf)
-
-        if self.is_decrypt_mode:
-            encrypted_files = source_files
-        else:
             self.crypto.init_aes_obj()
+        else:
+            encrypted_files = source_files
 
         for f in encrypted_files:
             if f.is_encrypted and not f.is_decrypted:
