@@ -5,11 +5,12 @@ from logging import error
 from pathlib import Path, PurePosixPath
 
 def load_modules():
+    PREPARED_MODULES = ["engine", "crypto", "file_manager", "logger"]
     try:
         work_dir = PurePosixPath(Path(__file__).parent.resolve())
         modules = [directory for directory in os.listdir(work_dir) if os.path.isdir(PurePosixPath(work_dir, directory))]
         for module in modules:
-            if module != "test_env":
+            if module in PREPARED_MODULES:
                 sys.path.append(PurePosixPath(work_dir, module).as_posix())
         return True
     except Exception as exc:
