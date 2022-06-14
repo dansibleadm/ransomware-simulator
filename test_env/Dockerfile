@@ -1,5 +1,5 @@
 FROM python:3.10-alpine
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/sh", "-c"]
 WORKDIR /usr/src/app
 
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev
