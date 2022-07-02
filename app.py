@@ -50,14 +50,14 @@ if __name__ == "__main__":
                         """)
     args = parser.parse_args()
 
-    if args.decrypt:
-        if not args.key and not args.iv:
+    if not args.key and not args.iv:
+        if args.decrypt:
             error(f"Decrypt mode is enabled. That why Key and IV required! Exit.")
             exit()
-        else:
-            if len(args.key) != 32 and len(args.iv) != 16:
-                error(f"Wrong lenght of key({len(args.key)}) or iv({len(args.iv)})")
-                exit()
+    else:
+        if len(args.key) != 32 and len(args.iv) != 16:
+            error(f"Wrong lenght of key({len(args.key)}) or iv({len(args.iv)})")
+            exit()
 
     if load_modules():
         from engine import Engine
